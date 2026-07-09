@@ -23,4 +23,13 @@ Each folder contains the starter `.R` app file(s) and the `data/` files needed f
 
 ## How to use
 
-When a tutorial asks you to open a starter file, navigate to the corresponding folder and open the `.R` file in your IDE, then click **Run App** (RStudio) or run `shiny::runApp()` (Positron).
+When a tutorial asks you to open a starter file, navigate to the corresponding folder and open the `.R` file in your IDE. To run an app:
+
+- **RStudio**: click the **Run App** button in the editor toolbar.
+- **Positron**: run the app from the Console with a lesson-folder-qualified path, e.g.
+
+  ```r
+  shiny::runApp("01-shiny-welcome_to_shiny/ex01.R")
+  ```
+
+This works from the repo root: `runApp()` temporarily switches to the app's folder while the app runs, so the app can find its `data/` files. (Avoid an argument-less `shiny::runApp()` — from the repo root it cannot find the app or its data.)
